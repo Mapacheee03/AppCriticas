@@ -1,70 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppCriticas.MainPage">
+             x:Class="AppCriticas.MainPage"
+             NavigationPage.HasNavigationBar="False">
 
-    <StackLayout>
-        <Frame BackgroundColor="White" Padding="24" CornerRadius="0">
-            <Label Text="ACTIVIDAD:CRITICOGRAFO" HorizontalTextAlignment="Center" TextColor="Black" FontSize="24"/>
-        </Frame>
-        <Label Text="Nombre:" FontSize="20" Padding="30,10,30,10" TextColor="Black"/>
-        <Entry Margin="-25" TextColor="Black"/>
-        <Label Text="GENERO:" FontSize="19" Padding="10,10,20,0" TextColor="Black" Margin="20"/>
+    <StackLayout BackgroundColor="#4dffa6" Padding="20">
 
+        <Label Text="CRITICOGRAFO" HorizontalTextAlignment="Center" Margin="0,40,0,20" TextColor="#004d26" FontSize="50"/>
 
-        <StackLayout Orientation="Horizontal">
-            <RadioButton Content="Hombre" GroupName="Genero"  />
-            <RadioButton Content="Mujer" GroupName="Genero"  />
+        <Label Text="Nombre:" FontSize="20" TextColor="#004d26"/>
+        <Entry Margin="0,0,0,20" TextColor="Black" Placeholder="Ingrese su nombre" BackgroundColor="Transparent" PlaceholderColor="Black" x:Name="Nombre" />
+
+        <Label Text="GÉNERO:" FontSize="20" TextColor="#004d26"/>
+        <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
+            <RadioButton Content="Hombre" GroupName="Genero" TextColor="#004d26" x:Name="Hombre"/>
+            <RadioButton Content="Mujer" GroupName="Genero" TextColor="#004d26" x:Name="Mujer" />
         </StackLayout>
 
+        <Label Text="Características:" FontSize="20" TextColor="#004d26"/>
+        <Grid Margin="0,0,0,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-
-
-
-
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-
-            <Grid Grid.Column="0">
-                <CheckBox />
-                <Label Text="ALTO" Margin="40"/>
+            <Grid Grid.Row="0">
+                <CheckBox Color="#004d26" x:Name="Alto"/>
+                <Label Text="ALTO" Margin="30,0,0,0" TextColor="#004d26"/>
             </Grid>
 
-
-            <Grid Grid.Column="1">
-                <CheckBox/>
-                <Label Text="FEO" Margin="40"/>
+            <Grid Grid.Row="1">
+                <CheckBox Color="#004d26" x:Name="Feo"/>
+                <Label Text="FEO" Margin="30,0,0,0" TextColor="#004d26"/>
             </Grid>
 
             <Grid Grid.Row="2">
-                <CheckBox Margin="1,-300,0,0"/>
-                <Label Text="LISTO" Margin="40,-110,0,0"/>
-            </Grid>
-
-            <Grid Grid.Row="2" Grid.Column="1">
-                <CheckBox Margin="1,-300,0,0"/>
-                <Label Text="EXTRAVAGANTE" Margin="40,-110,0,0"/>
+                <CheckBox Color="#004d26" x:Name="Listo"/>
+                <Label Text="LISTO" Margin="30,0,0,0" TextColor="#004d26"/>
             </Grid>
 
             <Grid Grid.Row="3">
-                <CheckBox Margin="1,-370,0,0"/>
-                <Label Text="RARO" Margin="40,-150,0,0"/>
+                <CheckBox Color="#004d26" x:Name="Extravagante"/>
+                <Label Text="EXTRAVAGANTE" Margin="30,0,0,0" TextColor="#004d26"/>
             </Grid>
-
-            <Grid Grid.Row="3" Grid.Column="1">
-                <CheckBox Margin="1,-370,0,0"/>
-                <Label Text="GRANDE" Margin="40,-150,0,0"/>
-            </Grid>
-
         </Grid>
-        <Button Text="CRITICAR" CornerRadius="10" Margin="-180" WidthRequest="250" HorizontalOptions="Center"/>
 
+        <Button Text="CRITICAR" BackgroundColor="#004d26" TextColor="White" CornerRadius="10" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" Clicked="MostrarCriticas_Clicked"/>
 
+        <Grid x:Name="DatosIngresados" Margin="0,20,0,0" Padding="10" BackgroundColor="#80FFFFFF" >
+            <Label x:Name="LabelCritica" TextColor="#004d26" FontSize="16" Margin="0,15,0,5"/>
+          
+        </Grid>
     </StackLayout>
-
 
 </ContentPage>
