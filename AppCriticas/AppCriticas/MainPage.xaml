@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCriticas.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="White" Padding="24" CornerRadius="0">
+            <Label Text="ACTIVIDAD:CRITICOGRAFO" HorizontalTextAlignment="Center" TextColor="Black" FontSize="24"/>
+        </Frame>
+        <Label Text="Nombre:" FontSize="20" Padding="30,10,30,10" TextColor="Black"/>
+        <Entry Margin="-25" TextColor="Black"/>
+        <Label Text="GENERO:" FontSize="19" Padding="10,10,20,0" TextColor="Black" Margin="20"/>
+
+
+        <StackLayout Orientation="Horizontal">
+            <RadioButton Content="Hombre" GroupName="Genero"  />
+            <RadioButton Content="Mujer" GroupName="Genero"  />
+        </StackLayout>
+
+
+
+
+
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="0">
+                <CheckBox />
+                <Label Text="ALTO" Margin="40"/>
+            </Grid>
+
+
+            <Grid Grid.Column="1">
+                <CheckBox/>
+                <Label Text="FEO" Margin="40"/>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <CheckBox Margin="1,-300,0,0"/>
+                <Label Text="LISTO" Margin="40,-110,0,0"/>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="1">
+                <CheckBox Margin="1,-300,0,0"/>
+                <Label Text="EXTRAVAGANTE" Margin="40,-110,0,0"/>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <CheckBox Margin="1,-370,0,0"/>
+                <Label Text="RARO" Margin="40,-150,0,0"/>
+            </Grid>
+
+            <Grid Grid.Row="3" Grid.Column="1">
+                <CheckBox Margin="1,-370,0,0"/>
+                <Label Text="GRANDE" Margin="40,-150,0,0"/>
+            </Grid>
+
+        </Grid>
+        <Button Text="CRITICAR" CornerRadius="10" Margin="-180" WidthRequest="250" HorizontalOptions="Center"/>
+
+
+    </StackLayout>
+
+
+</ContentPage>
