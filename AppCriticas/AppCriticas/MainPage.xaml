@@ -24,6 +24,8 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
@@ -45,13 +47,22 @@
                 <CheckBox Color="#004d26" x:Name="Extravagante"/>
                 <Label Text="EXTRAVAGANTE" Margin="30,0,0,0" TextColor="#004d26"/>
             </Grid>
+
+            <Grid Grid.Row="4">
+                <CheckBox Color="#004d26" x:Name="Raro"/>
+                <Label Text="Raro" Margin="30,0,0,0" TextColor="#004d26"/>
+            </Grid>
+
+            <Grid Grid.Row="5">
+                <CheckBox Color="#004d26" x:Name="Grande"/>
+                <Label Text="Grande" Margin="30,0,0,0" TextColor="#004d26"/>
+            </Grid>
         </Grid>
 
         <Button Text="CRITICAR" BackgroundColor="#004d26" TextColor="White" CornerRadius="10" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" Clicked="MostrarCriticas_Clicked"/>
 
         <Grid x:Name="DatosIngresados" Margin="0,20,0,0" Padding="10" BackgroundColor="#80FFFFFF" >
             <Label x:Name="LabelCritica" TextColor="#004d26" FontSize="16" Margin="0,15,0,5"/>
-          
         </Grid>
     </StackLayout>
 

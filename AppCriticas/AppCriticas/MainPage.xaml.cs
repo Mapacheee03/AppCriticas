@@ -12,6 +12,7 @@ namespace AppCriticas
     {
         
         public MainPage()
+
         {
             InitializeComponent();
         }
@@ -19,22 +20,69 @@ namespace AppCriticas
         private void MostrarCriticas_Clicked(object sender, EventArgs e)
         {
             string nombre = Nombre.Text;
-            string genero = Hombre.IsChecked ? "Hombre" : "Mujer";
-            string caracteristicas = "";
+            string genero = "";
+            if (Hombre.IsChecked)
+            {
+                genero = "masculino";
+            }
+            else if (Mujer.IsChecked)
+            {
+                genero = "femenino";
+            }
+
+            List<string> caracteristicasSeleccionadas = new List<string>();
 
             if (Alto.IsChecked)
-                caracteristicas += "ALTO ";
+            {
+                caracteristicasSeleccionadas.Add(genero == "femenino" ? "alta" : "alto");
+            }
             if (Feo.IsChecked)
-                caracteristicas += "FEO ";
+            {
+                caracteristicasSeleccionadas.Add(genero == "femenino" ? "fea" : "feo");
+            }
             if (Listo.IsChecked)
-                caracteristicas += "LISTO y ";    
+            {
+                caracteristicasSeleccionadas.Add(genero == "femenino" ? "lista" : "listo");
+            }
             if (Extravagante.IsChecked)
-                caracteristicas += "EXTRAVAGANTE. ";
+            {
+                caracteristicasSeleccionadas.Add("extravagante");
+            }
+            if (Raro.IsChecked)
+            {
+                caracteristicasSeleccionadas.Add(genero == "femenino" ? "rara" : "raro");
+            }
+            if (Grande.IsChecked)
+            {
+                caracteristicasSeleccionadas.Add("grande");
+            }
 
-            LabelCritica.Text = $"{nombre} es {genero} tambien es {caracteristicas.TrimEnd(' ', ',')}";
-         
+            // Construir la cadena de salida
+            string critica = $"Hola {nombre}, usted posee las siguientes características: ";
 
-            DatosIngresados.IsVisible = true;
+            if (caracteristicasSeleccionadas.Count == 1)
+            {
+                critica += caracteristicasSeleccionadas[0];
+            }
+            else if (caracteristicasSeleccionadas.Count == 2)
+            {
+                critica += $"{caracteristicasSeleccionadas[0]} y {caracteristicasSeleccionadas[1]}";
+            }
+            else if (caracteristicasSeleccionadas.Count > 2)
+            {
+                for (int i = 0; i < caracteristicasSeleccionadas.Count - 1; i++)
+                {
+                    critica += $"{caracteristicasSeleccionadas[i]}, ";
+                }
+                critica += $"y {caracteristicasSeleccionadas[caracteristicasSeleccionadas.Count - 1]}";
+            }
+
+            critica += ".";
+
+            // Mostrar la crítica en la interfaz de usuario
+            LabelCritica.Text = critica;
         }
+
+
     }
 }
