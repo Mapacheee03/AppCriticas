@@ -23,26 +23,26 @@ namespace AppCriticas
             string genero = "";
             if (Hombre.IsChecked)
             {
-                genero = "masculino";
+                genero = "Hombre";
             }
             else if (Mujer.IsChecked)
             {
-                genero = "femenino";
+                genero = "Mujer";
             }
 
             List<string> caracteristicasSeleccionadas = new List<string>();
 
             if (Alto.IsChecked)
             {
-                caracteristicasSeleccionadas.Add(genero == "femenino" ? "alta" : "alto");
+                caracteristicasSeleccionadas.Add(genero == "Mujer" ? "alta" : "alto");
             }
             if (Feo.IsChecked)
             {
-                caracteristicasSeleccionadas.Add(genero == "femenino" ? "fea" : "feo");
+                caracteristicasSeleccionadas.Add(genero == "Mujer" ? "fea" : "feo");
             }
             if (Listo.IsChecked)
             {
-                caracteristicasSeleccionadas.Add(genero == "femenino" ? "lista" : "listo");
+                caracteristicasSeleccionadas.Add(genero == "Mujer" ? "lista" : "listo");
             }
             if (Extravagante.IsChecked)
             {
@@ -50,7 +50,7 @@ namespace AppCriticas
             }
             if (Raro.IsChecked)
             {
-                caracteristicasSeleccionadas.Add(genero == "femenino" ? "rara" : "raro");
+                caracteristicasSeleccionadas.Add(genero == "Mujer" ? "rara" : "raro");
             }
             if (Grande.IsChecked)
             {
@@ -58,7 +58,7 @@ namespace AppCriticas
             }
 
             // Construir la cadena de salida
-            string critica = $"Hola {nombre}, usted posee las siguientes características: ";
+            string critica = $"{nombre}  eres  ";
 
             if (caracteristicasSeleccionadas.Count == 1)
             {

@@ -4,65 +4,53 @@
              x:Class="AppCriticas.MainPage"
              NavigationPage.HasNavigationBar="False">
 
-    <StackLayout BackgroundColor="#4dffa6" Padding="20">
+    <StackLayout BackgroundColor="#000000" Padding="20">
 
-        <Label Text="CRITICOGRAFO" HorizontalTextAlignment="Center" Margin="0,40,0,20" TextColor="#004d26" FontSize="50"/>
+        <Label Text="CRITICOGRAFO" HorizontalTextAlignment="Center" Margin="0,40,0,20" TextColor="#00FFD1" FontSize="50" FontFamily="AvenirNext-Bold"/>
 
-        <Label Text="Nombre:" FontSize="20" TextColor="#004d26"/>
-        <Entry Margin="0,0,0,20" TextColor="Black" Placeholder="Ingrese su nombre" BackgroundColor="Transparent" PlaceholderColor="Black" x:Name="Nombre" />
+        <Label Text="Nombre:" FontSize="20" TextColor="#00FFD1"/>
+        <Entry x:Name="Nombre" Placeholder="Ingrese su nombre" BackgroundColor="#00161A" PlaceholderColor="#00FFD1" TextColor="#00FFD1"/>
 
-        <Label Text="GÉNERO:" FontSize="20" TextColor="#004d26"/>
-        <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
-            <RadioButton Content="Hombre" GroupName="Genero" TextColor="#004d26" x:Name="Hombre"/>
-            <RadioButton Content="Mujer" GroupName="Genero" TextColor="#004d26" x:Name="Mujer" />
+        <Label Text="GÉNERO:" FontSize="20" TextColor="#00FFD1" Margin="0,20,0,0"/>
+        <StackLayout Orientation="Horizontal">
+            <RadioButton Content="Hombre" GroupName="Genero" TextColor="#00FFD1" x:Name="Hombre"/>
+            <RadioButton Content="Mujer" GroupName="Genero" TextColor="#00FFD1" x:Name="Mujer" />
         </StackLayout>
 
-        <Label Text="Características:" FontSize="20" TextColor="#004d26"/>
-        <Grid Margin="0,0,0,20">
+        <Label Text="Características:" FontSize="20" TextColor="#00FFD1" Margin="0,20,0,0"/>
+        <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0">
-                <CheckBox Color="#004d26" x:Name="Alto"/>
-                <Label Text="ALTO" Margin="30,0,0,0" TextColor="#004d26"/>
-            </Grid>
+            <CheckBox Grid.Row="0" Color="#00FFD1" x:Name="Alto"/>
+            <Label Grid.Row="0" Text="ALTO" Margin="30,0,0,0" TextColor="#00FFD1"/>
 
-            <Grid Grid.Row="1">
-                <CheckBox Color="#004d26" x:Name="Feo"/>
-                <Label Text="FEO" Margin="30,0,0,0" TextColor="#004d26"/>
-            </Grid>
+            <CheckBox Grid.Row="1" Color="#00FFD1" x:Name="Feo"/>
+            <Label Grid.Row="1" Text="FEO" Margin="30,0,0,0" TextColor="#00FFD1"/>
 
-            <Grid Grid.Row="2">
-                <CheckBox Color="#004d26" x:Name="Listo"/>
-                <Label Text="LISTO" Margin="30,0,0,0" TextColor="#004d26"/>
-            </Grid>
+            <CheckBox Grid.Row="2" Color="#00FFD1" x:Name="Listo"/>
+            <Label Grid.Row="2" Text="LISTO" Margin="30,0,0,0" TextColor="#00FFD1"/>
 
-            <Grid Grid.Row="3">
-                <CheckBox Color="#004d26" x:Name="Extravagante"/>
-                <Label Text="EXTRAVAGANTE" Margin="30,0,0,0" TextColor="#004d26"/>
-            </Grid>
+            <CheckBox Grid.Row="3" Color="#00FFD1" x:Name="Extravagante"/>
+            <Label Grid.Row="3" Text="EXTRAVAGANTE" Margin="30,0,0,0" TextColor="#00FFD1"/>
 
-            <Grid Grid.Row="4">
-                <CheckBox Color="#004d26" x:Name="Raro"/>
-                <Label Text="Raro" Margin="30,0,0,0" TextColor="#004d26"/>
-            </Grid>
+            <CheckBox Grid.Row="4" Color="#00FFD1" x:Name="Raro"/>
+            <Label Grid.Row="4" Text="Raro" Margin="30,0,0,0" TextColor="#00FFD1"/>
 
-            <Grid Grid.Row="5">
-                <CheckBox Color="#004d26" x:Name="Grande"/>
-                <Label Text="Grande" Margin="30,0,0,0" TextColor="#004d26"/>
-            </Grid>
+            <CheckBox Grid.Row="5" Color="#00FFD1" x:Name="Grande"/>
+            <Label Grid.Row="5" Text="Grande" Margin="30,0,0,0" TextColor="#00FFD1"/>
         </Grid>
 
-        <Button Text="CRITICAR" BackgroundColor="#004d26" TextColor="White" CornerRadius="10" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" Clicked="MostrarCriticas_Clicked"/>
+        <Button Text="CRITICAR" BackgroundColor="#00FFD1" TextColor="#000000" CornerRadius="10" Margin="0,20,0,0" Clicked="MostrarCriticas_Clicked"/>
 
-        <Grid x:Name="DatosIngresados" Margin="0,20,0,0" Padding="10" BackgroundColor="#80FFFFFF" >
-            <Label x:Name="LabelCritica" TextColor="#004d26" FontSize="16" Margin="0,15,0,5"/>
+        <Grid x:Name="DatosIngresados" Margin="0,20,0,0" Padding="10" BackgroundColor="#00161A" >
+            <Label x:Name="LabelCritica" TextColor="#00FFD1" FontSize="16" Margin="0,15,0,5"/>
         </Grid>
     </StackLayout>
 
